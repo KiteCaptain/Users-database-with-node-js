@@ -50,16 +50,19 @@ const con = mysql.createConnection({
 
 con.connect ((err) => {
     if (err) throw err;
-    sql = `SELECT * FROM visitors`
-    con.query(sql, (err, result, fields)=>{
+    sql = `SELECT first_name, email FROM visitors`
+    con.query(sql, (err, result)=>{
         if (err) console.log("Try again! An error occured");
         for (obj of result) {
-            console.log(obj)
-            for (let item in obj) {
-                if(item.email == "viola@gmail.com") {
-                    console.log("Dear " + item.first_name + ", your id is" + item.visitor_id)
-                }
+            if (obj.email == "viola@gmail.com") {
+                console.log("Dear " + obj.first_name + ", thanks for visiting! Come again soon.")
             }
+
+            // switch ("first_name") {
+            //     case obj.email == "viola@gmail.com":
+            //         console.log(obj)
+            // }
+
         }
     })
 })
