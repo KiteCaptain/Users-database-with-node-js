@@ -11,8 +11,6 @@ app.get('/',(req, res)=> {
     // res.json({message: "Success by default"})
     // res.download("server.js")
     res.render("index")
-
 })
 
 app.listen(3000)
-

@@ -1,0 +1,38 @@
+* {
+    color:azure
+}
+body{
+    background-color: rgb(31, 34, 38);
+}
+.test-form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.test-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.test-form form input, .test-form form textarea {
+    /* rgb(31, 34, 38) */
+    border:1px solid rgb(31, 34, 38);
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background-color: rgb(61, 66, 74);
+    padding: 8px;
+    border-radius: 10px;
+}
+.test-form form button {
+    border: none;
+    background-color: rgb(105, 177, 177);
+    font-size: 1.2rem;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 20px;
+}
