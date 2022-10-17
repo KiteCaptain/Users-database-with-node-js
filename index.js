@@ -68,16 +68,27 @@ const con = mysql.createConnection({
 //     })
 // })
 
+// // SEARCHING USING LIKE
+// con.connect((err)=>{
+//     if (err) console.log("An fatal erro occured!");
+//     let sql = `SELECT * FROM visitors WHERE email LIKE "%kilo%"`
+//     con.query(sql, (err, result)=>{
+//         if (err) console.log("An error occured");
+//         if (result.length == 0) {
+//             console.log("No match found!");
+//         } else {
+//             console.log(result)
+//         }
+//     })
+// })
 
-con.connect((err)=>{
-    if (err) console.log("An fatal erro occured!");
-    let sql = `SELECT * FROM visitors WHERE email LIKE "%kilo%"`
-    con.query(sql, (err, result)=>{
-        if (err) console.log("An error occured");
-        if (result.length == 0) {
-            console.log("No match found!");
-        } else {
-            console.log(result)
-        }
-    })
+
+
+// // AVOIDING SQL injections using mysql.escape(variable_name)
+let email = "admin@captainkite.tech"
+var sql = `SELECT * FROM visitors WHERE email = `+ mysql.escape(email);
+
+con.query(sql, (err, result)=>{
+    if (err) console.log("An error occured!");
+    console.log(result.length)
 })
