@@ -85,10 +85,19 @@ const con = mysql.createConnection({
 
 
 // // AVOIDING SQL injections using mysql.escape(variable_name)
-let email = "admin@captainkite.tech"
-var sql = `SELECT * FROM visitors WHERE email = `+ mysql.escape(email);
+// let email = "admin@captainkite.tech"
+// var sql = `SELECT * FROM visitors WHERE email = `+ mysql.escape(email);
 
-con.query(sql, (err, result)=>{
-    if (err) console.log("An error occured!");
-    console.log(result.length)
+// con.query(sql, (err, result)=>{
+//     if (err) console.log("An error occured!");
+//     console.log(result.length)
+// })
+
+// //Escape query values by using the placeholder ? method
+let firstName = "joh"
+let email = "joh@gmail.com"
+let sql = `SELECT * FROM visitors WHERE email = ? OR first_name = ?`;
+con.query(sql, [email, firstName], (err, result)=>{
+    if (err) console.log(err);
+    console.log(result);
 })
