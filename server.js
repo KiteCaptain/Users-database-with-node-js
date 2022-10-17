@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 console.log("Running express app...")
 
+app.set('view engine', 'ejs')
 app.get('/',(req, res)=> {
     console.log('Here')
     // res.status(500).send("There was an error")
