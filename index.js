@@ -48,22 +48,36 @@ const con = mysql.createConnection({
 //     })
 // })
 
-con.connect ((err) => {
-    if (err) throw err;
-    sql = `SELECT first_name, email FROM visitors`
+// TRIED DESTRUCTURING
+// con.connect ((err) => {
+//     if (err) throw err;
+//     sql = `SELECT first_name, email FROM visitors WHERE email = "admin@captainkite.tech"`
+//     con.query(sql, (err, result)=>{
+//         if (err) console.log("Try again! An error occured");
+//         for (obj of result) {
+//             if (obj.email == "viola@gmail.com") {
+//                 console.log("Dear " + obj.first_name + ", thanks for visiting! Come again soon.")
+//             }
+
+//             // switch ("first_name") {
+//             //     case obj.email == "viola@gmail.com":
+//             //         console.log(obj)
+//             // }
+
+//         }
+//     })
+// })
+
+
+con.connect((err)=>{
+    if (err) console.log("An fatal erro occured!");
+    let sql = `SELECT * FROM visitors WHERE email LIKE "%kilo%"`
     con.query(sql, (err, result)=>{
-        if (err) console.log("Try again! An error occured");
-        for (obj of result) {
-            if (obj.email == "viola@gmail.com") {
-                console.log("Dear " + obj.first_name + ", thanks for visiting! Come again soon.")
-            }
-
-            // switch ("first_name") {
-            //     case obj.email == "viola@gmail.com":
-            //         console.log(obj)
-            // }
-
+        if (err) console.log("An error occured");
+        if (result.length == 0) {
+            console.log("No match found!");
+        } else {
+            console.log(result)
         }
     })
 })
-
