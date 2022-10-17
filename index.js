@@ -94,10 +94,10 @@ const con = mysql.createConnection({
 // })
 
 // //Escape query values by using the placeholder ? method
-let firstName = "joh"
-let email = "joh@gmail.com"
-let sql = `SELECT * FROM visitors WHERE email = ? OR first_name = ?`;
-con.query(sql, [email, firstName], (err, result)=>{
-    if (err) console.log(err);
-    console.log(result);
-})
+// let firstName = "joh"
+// let email = "joh@gmail.com"
+// let sql = `SELECT * FROM visitors WHERE email = ? OR first_name = ?`;
+// con.query(sql, [email, firstName], (err, result)=>{
+//     if (err) console.log(err);
+//     console.log(result);
+// })

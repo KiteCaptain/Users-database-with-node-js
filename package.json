@@ -1,0 +1,23 @@
+{
+  "name": "users-database-with-node-js",
+  "version": "1.0.0",
+  "description": "\"Manipulating visitors database with node,js\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiteCaptain/Users-database-with-node-js.git"
+  },
+  "keywords": [
+    "\"email\"",
+    "\"first_name\""
+  ],
+  "author": "\"Kite Eugine\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiteCaptain/Users-database-with-node-js/issues"
+  },
+  "homepage": "https://github.com/KiteCaptain/Users-database-with-node-js#readme"
+}
