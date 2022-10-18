@@ -4,7 +4,7 @@
   "description": "\"Manipulating visitors database with node,js\"",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon -e js,ejs,css,html server.js"
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
