@@ -10,7 +10,11 @@ app.get('/',(req, res)=> {
     // res.status(500).json({message: "Internal server error"})
     // res.json({message: "Success by default"})
     // res.download("server.js")
-    res.render("index")
+    res.render("index", { tet: "World" })
 })
 
+
+const userRouter = require('./routes/users')
+
+app.use("/users", userRouter)
 app.listen(3000)
