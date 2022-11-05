@@ -11,9 +11,9 @@ MongoClient.connect(uri, (err, db) => {
         { name: 'Vamilla gream'}
       ];
 
-    dbo.collection("customers").insertMany(myobj, (err, res) => {
+    dbo.collection("customers").findOne({}, (err, res) => {
         if (err) throw err;
-        console.log(res.insertedCount + " collections inserted!" );
+        console.log(res.name );
         console.log(res)
 
         
